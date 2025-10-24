@@ -37,9 +37,23 @@ variable "tfc_workspace_name" {
   default     = "my-vault-workspace"
   description = "The name of the workspace that you'd like to create and connect to Vault"
 }
-
+variable "target_tfc_project" {
+  type        = string
+  default     = "vault-configuration"
+  description = "The project under which the vault authentication will be valid"
+}
 variable "vault_policy" {
   type        = string
   default     = null
   description = "Vault Policy to assiciate with Terraform Platform"
+}
+variable "vault_namespace" {
+  type        = string
+  default     = "admin"
+  description = "Vault Namespace to assiciate with Terraform Platform"
+}
+variable "variable_set_name" {
+  type        = string
+  default     = "HCP Terraform to Vault Auth"
+  description = "HCP Terraform Variable Set Name"
 }
